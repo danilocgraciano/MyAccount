@@ -3,6 +3,7 @@ var Checkout = Checkout || {};
 Checkout.FormDadosComprador = (function () {
 
     function FormDadosComprador(radioTipoComprador, chkEstrangeiro, tabFormaPagamento) {
+        this.formDadosComprador = $('#formDadosComprador');
         this.radioTipoComprador = radioTipoComprador;
         this.chkEstrangeiro = chkEstrangeiro;
         this.tabFormaPagamento = tabFormaPagamento;
@@ -14,32 +15,30 @@ Checkout.FormDadosComprador = (function () {
         this.tabFormaPagamento.on('change', onChangeFormaPagamento.bind(this));
         this.tabFormaPagamento.on('mistoChanged', onChangePagamentoMisto.bind(this));
 
-        this.lblCpf = $("label[for='txtCpf']");
-        this.txtCpf = $('#txtCpf');
-        this.txtCnpj = $('#txtCnpj');
-        this.txtRazaoSocial = $('#txtRazaoSocial');
-        this.txtNomeFantasia = $('#txtNomeFantasia');
-        this.chkIsento = $('#chkIsento');
-        this.txtInscricaoEstadual = $('#txtInscricaoEstadual');
-        this.txtResponsavelNome = $('#txtResponsavelNome');
-        this.txtResponsavelCpf = $('#txtResponsavelCpf');
-        this.txtNome = $('#txtNome');
-        this.txtRg = $('#txtRg');
-        this.txtTelefoneCelular = $('#txtTelefoneCelular');
-        this.txtTelefoneResidencial = $('#txtTelefoneResidencial');
-        this.txtTelefoneComercial = $('#txtTelefoneComercial');
-        this.txtEmail = $('#txtEmail');
-        this.dtfDataNascimento = $('#dtfDataNascimento');
-        this.comboSexo = $('#comboSexo');
-        this.txtCEP = $('#txtCEP');
-        this.txtLogradouro = $('#txtLogradouro');
-        this.txtNumero = $('#txtNumero');
-        this.txtBairro = $('#txtBairro');
-        this.txtComplemento = $('#txtComplemento');
-        this.txtMunicipio = $('#txtMunicipio');
-        this.radioTipoComprador = $('input[type=radio][name=radioTipoComprador]');
-
-        this.radioTipoComprador.filter("[value=" + FISICA + "]").click();
+        this.lblCpf = this.formDadosComprador.find("label[for='txtCpf']");
+        this.txtCpf = this.formDadosComprador.find('#txtCpf');
+        this.txtCnpj = this.formDadosComprador.find('#txtCnpj');
+        this.txtRazaoSocial = this.formDadosComprador.find('#txtRazaoSocial');
+        this.txtNomeFantasia = this.formDadosComprador.find('#txtNomeFantasia');
+        this.chkIsento = this.formDadosComprador.find('#chkIsento');
+        this.txtInscricaoEstadual = this.formDadosComprador.find('#txtInscricaoEstadual');
+        this.txtResponsavelNome = this.formDadosComprador.find('#txtResponsavelNome');
+        this.txtResponsavelCpf = this.formDadosComprador.find('#txtResponsavelCpf');
+        this.txtNome = this.formDadosComprador.find('#txtNome');
+        this.txtRg = this.formDadosComprador.find('#txtRg');
+        this.txtTelefoneCelular = this.formDadosComprador.find('#txtTelefoneCelular');
+        this.txtTelefoneResidencial = this.formDadosComprador.find('#txtTelefoneResidencial');
+        this.txtTelefoneComercial = this.formDadosComprador.find('#txtTelefoneComercial');
+        this.txtEmail = this.formDadosComprador.find('#txtEmail');
+        this.dtfDataNascimento = this.formDadosComprador.find('#dtfDataNascimento');
+        this.comboSexo = this.formDadosComprador.find('#comboSexo');
+        this.txtCEP = this.formDadosComprador.find('#txtCEP');
+        this.txtLogradouro = this.formDadosComprador.find('#txtLogradouro');
+        this.txtNumero = this.formDadosComprador.find('#txtNumero');
+        this.txtBairro = this.formDadosComprador.find('#txtBairro');
+        this.txtComplemento = this.formDadosComprador.find('#txtComplemento');
+        this.txtMunicipio = this.formDadosComprador.find('#txtMunicipio');
+        this.radioTipoComprador.setSelected(FISICA);
 
         this.setCamposObrigatorios();
 
@@ -73,7 +72,7 @@ Checkout.FormDadosComprador = (function () {
         this.txtMunicipio.prop('required', false);
 
 
-        if (this.radioTipoComprador.filter(":checked").val() == FISICA) {
+        if (this.radioTipoComprador.getSelected() == FISICA) {
             this.txtCpf.prop('required', true);
             this.txtNome.prop('required', true);
             this.txtRg.prop('required', true);

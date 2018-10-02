@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	 crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="checkout.css">
+	<link rel="stylesheet" type="text/css" href="css/checkout.css">
 
 	<title>My Checkout</title>
 </head>
@@ -17,236 +17,239 @@
 	</nav>
 	<div class="container">
 
-		<div class="row">
-			<div class="col-md-6">
+		<form id="formDadosComprador">
+			<div class="row">
+				<div class="col-md-6">
 
-				<div class="row mb-4">
+					<div class="row mb-4">
 
-					<div class="col-md-3"></div>
+						<div class="col-md-3"></div>
 
-					<div class="form-check col-md-3">
-						<input class="form-check-input" type="radio" name="radioTipoComprador" id="radPessoaFisica" value="F">
-						<label class="form-check-label" for="radPessoaFisica">Pessoa Física</label>
+						<div class="form-check col-md-3">
+							<input class="form-check-input" type="radio" name="radioTipoComprador" id="radPessoaFisica" value="F">
+							<label class="form-check-label" for="radPessoaFisica">Pessoa Física</label>
+						</div>
+
+						<div class="form-check col-md-3">
+							<input class="form-check-input" type="radio" name="radioTipoComprador" id="radPessoaJuridica" value="J">
+							<label class="form-check-label" for="radPessoaJuridica">Pessoa Jurídica</label>
+						</div>
+
+						<div class="form-check col-md-3">
+							<input type="checkbox" class="form-check-input" id="chkEstrangeiro">
+							<label class="form-check-label" for="chkEstrangeiro">Estrangeiro</label>
+						</div>
 					</div>
 
-					<div class="form-check col-md-3">
-						<input class="form-check-input" type="radio" name="radioTipoComprador" id="radPessoaJuridica" value="J">
-						<label class="form-check-label" for="radPessoaJuridica">Pessoa Jurídica</label>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtCpf">CPF</label>
+						<input type="text" class="col-sm-8 form-control" id="txtCpf">
 					</div>
 
-					<div class="form-check col-md-3">
-						<input type="checkbox" class="form-check-input" id="chkEstrangeiro">
-						<label class="form-check-label" for="chkEstrangeiro">Estrangeiro</label>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtCnpj">CNPJ</label>
+						<input type="text" class="col-sm-8 form-control" id="txtCnpj">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtRazaoSocial">Razão Social</label>
+						<input type="text" class="col-sm-8 form-control" id="txtRazaoSocial">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtNomeFantasia">Nome Fantasia</label>
+						<input type="text" class="col-sm-8 form-control" id="txtNomeFantasia">
+						<br>
+					</div>
+
+					<div class="row">
+						<div class="form-group">
+							<input type="checkbox" class="col-sm-9 form-check-input" id="chkIsento">
+							<label class="col-sm-3 form-check-label" for="chkIsento">Isento</label>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtInscricaoEstadual">Inscrição Estadual</label>
+						<input type="text" class="col-sm-8 form-control" id="txtInscricaoEstadual">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtNome">Nome</label>
+						<input type="text" class="col-sm-8 form-control" id="txtNome">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtRg">RG</label>
+						<input type="text" class="col-sm-8 form-control" id="txtRg">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtTelefoneCelular">Telefone Celular</label>
+						<input type="text" class="col-sm-8 form-control" id="txtTelefoneCelular">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtTelefoneResidencial">Telefone Residencial</label>
+						<input type="text" class="col-sm-8 form-control" id="txtTelefoneResidencial">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtTelefoneComercial">Telefone Comercial</label>
+						<input type="text" class="col-sm-8 form-control" id="txtTelefoneComercial">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtEmail">E-mail</label>
+						<input type="text" class="col-sm-8 form-control" id="txtEmail">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtResponsavelNome">Responsável Nome</label>
+						<input type="text" class="col-sm-8 form-control" id="txtResponsavelNome">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtResponsavelCpf">Responsável CPF</label>
+						<input type="text" class="col-sm-8 form-control" id="txtResponsavelCpf">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="dtfDataNascimento">Data de Nascimento</label>
+						<input type="date" class="col-sm-8 form-control" id="dtfDataNascimento">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="comboSexo">Sexo</label>
+						<select class="col-sm-8 form-control" id="comboSexo">
+							<option value="M">Masculino</option>
+							<option value="F">Feminino</option>
+						</select>
+						<br>
 					</div>
 				</div>
 
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtCpf">CPF</label>
-					<input type="text" class="col-sm-8 form-control" id="txtCpf">
-				</div>
+				<div class="col-md-6">
 
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtCnpj">CNPJ</label>
-					<input type="text" class="col-sm-8 form-control" id="txtCnpj">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtRazaoSocial">Razão Social</label>
-					<input type="text" class="col-sm-8 form-control" id="txtRazaoSocial">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtNomeFantasia">Nome Fantasia</label>
-					<input type="text" class="col-sm-8 form-control" id="txtNomeFantasia">
-					<br>
-				</div>
-
-				<div class="row">
-					<div class="form-group">
-						<input type="checkbox" class="col-sm-9 form-check-input" id="chkIsento">
-						<label class="col-sm-3 form-check-label" for="chkIsento">Isento</label>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtInscricaoEstadual">Inscrição Estadual</label>
-					<input type="text" class="col-sm-8 form-control" id="txtInscricaoEstadual">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtNome">Nome</label>
-					<input type="text" class="col-sm-8 form-control" id="txtNome">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtRg">RG</label>
-					<input type="text" class="col-sm-8 form-control" id="txtRg">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtTelefoneCelular">Telefone Celular</label>
-					<input type="text" class="col-sm-8 form-control" id="txtTelefoneCelular">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtTelefoneResidencial">Telefone Residencial</label>
-					<input type="text" class="col-sm-8 form-control" id="txtTelefoneResidencial">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtTelefoneComercial">Telefone Comercial</label>
-					<input type="text" class="col-sm-8 form-control" id="txtTelefoneComercial">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtEmail">E-mail</label>
-					<input type="text" class="col-sm-8 form-control" id="txtEmail">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtResponsavelNome">Responsável Nome</label>
-					<input type="text" class="col-sm-8 form-control" id="txtResponsavelNome">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtResponsavelCpf">Responsável CPF</label>
-					<input type="text" class="col-sm-8 form-control" id="txtResponsavelCpf">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="dtfDataNascimento">Data de Nascimento</label>
-					<input type="date" class="col-sm-8 form-control" id="dtfDataNascimento">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="comboSexo">Sexo</label>
-					<select class="col-sm-8 form-control" id="comboSexo">
-						<option value="M">Masculino</option>
-						<option value="F">Feminino</option>
-					</select>
-					<br>
-				</div>
-			</div>
-
-			<div class="col-md-6">
-
-				<div class="form-group row pt-5">
-					<label class="col-sm-4 col-form-label" for="txtCEP">CEP</label>
-					<input type="text" class="col-sm-8 form-control" id="txtCEP">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtLogradouro">Logradouro</label>
-					<input type="text" class="col-sm-8 form-control" id="txtLogradouro">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtNumero">Número</label>
-					<input type="text" class="col-sm-8 form-control" id="txtNumero">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtBairro">Bairro</label>
-					<input type="text" class="col-sm-8 form-control" id="txtBairro">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtComplemento">Complemento</label>
-					<input type="text" class="col-sm-8 form-control" id="txtComplemento">
-					<br>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label" for="txtMunicipio">Município</label>
-					<input type="text" class="col-sm-8 form-control" id="txtMunicipio">
-					<br>
-				</div>
-			</div>
-		</div>
-
-		<ul class="nav nav-tabs" id="tabFormaPagamento" role="tablist">
-			<li class="nav-item">
-				<a class="nav-link active" id="boleto-vista-tab" data-toggle="tab" href="#boleto-vista" role="tab" aria-controls="boleto-vista"
-				 aria-selected="true">Boleto à Vista</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="cartao-credito-tab" data-toggle="tab" href="#cartao-credito" role="tab" aria-controls="cartao-credito"
-				 aria-selected="false">Cartão de Crédito</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="cartao-debito-tab" data-toggle="tab" href="#cartao-debito" role="tab" aria-controls="cartao-debito"
-				 aria-selected="false">Cartão de Débito</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="dinheiro-tab" data-toggle="tab" href="#dinheiro" role="tab" aria-controls="dinheiro" aria-selected="false">Dinheiro</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="deposito-tab" data-toggle="tab" href="#deposito" role="tab" aria-controls="deposito" aria-selected="false">Depósito</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="misto-tab" data-toggle="tab" href="#misto" role="tab" aria-controls="misto" aria-selected="false">Misto</a>
-			</li>
-		</ul>
-		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show active" id="boleto-vista" role="tabpanel" aria-labelledby="boleto-vista-tab">
-				<h1>Boleto a Vista</h1>
-			</div>
-			<div class="tab-pane fade" id="cartao-credito" role="tabpanel" aria-labelledby="cartao-credito-tab">
-				<h1>Cartão de Crédito</h1>
-			</div>
-			<div class="tab-pane fade" id="cartao-debito" role="tabpanel" aria-labelledby="cartao-debito-tab">
-				<h1>Cartão de Débito</h1>
-			</div>
-			<div class="tab-pane fade" id="dinheiro" role="tabpanel" aria-labelledby="dinheiro-tab">
-				<h1>Dinheiro</h1>
-			</div>
-
-			<div class="tab-pane fade" id="deposito" role="tabpanel" aria-labelledby="deposito-tab">
-				<h1>Depósito</h1>
-			</div>
-
-			<div class="tab-pane fade" id="misto" role="tabpanel" aria-labelledby="misto-tab">
-
-				<div class="row">
-
-					<div class="form-check col-md-3">
-						<input type="checkbox" class="form-check-input" id="chkMistoBoleto">
-						<label class="form-check-label" for="chkMistoBoleto">Boleto à Vista</label>
+					<div class="form-group row pt-5">
+						<label class="col-sm-4 col-form-label" for="txtCEP">CEP</label>
+						<input type="text" class="col-sm-8 form-control" id="txtCEP">
+						<br>
 					</div>
 
-					<div class="form-check col-md-3">
-						<input type="checkbox" class="form-check-input" id="chkMistoCredito">
-						<label class="form-check-label" for="chkMistoCredito">Cartão de Crédito</label>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtLogradouro">Logradouro</label>
+						<input type="text" class="col-sm-8 form-control" id="txtLogradouro">
+						<br>
 					</div>
 
-					<div class="form-check col-md-3">
-						<input type="checkbox" class="form-check-input" id="chkMistoDebito">
-						<label class="form-check-label" for="chkMistoDebito">Cartão de Débito</label>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtNumero">Número</label>
+						<input type="text" class="col-sm-8 form-control" id="txtNumero">
+						<br>
 					</div>
 
-					<div class="form-check col-md-3">
-						<input type="checkbox" class="form-check-input" id="chkMistoDinheiro">
-						<label class="form-check-label" for="chkMistoDinheiro">Dinheiro</label>
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtBairro">Bairro</label>
+						<input type="text" class="col-sm-8 form-control" id="txtBairro">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtComplemento">Complemento</label>
+						<input type="text" class="col-sm-8 form-control" id="txtComplemento">
+						<br>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-4 col-form-label" for="txtMunicipio">Município</label>
+						<input type="text" class="col-sm-8 form-control" id="txtMunicipio">
+						<br>
 					</div>
 				</div>
 			</div>
-		</div>
+
+
+			<ul class="nav nav-tabs" id="tabFormaPagamento" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="boleto-vista-tab" data-toggle="tab" href="#boleto-vista" role="tab" aria-controls="boleto-vista"
+					 aria-selected="true">Boleto à Vista</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="cartao-credito-tab" data-toggle="tab" href="#cartao-credito" role="tab" aria-controls="cartao-credito"
+					 aria-selected="false">Cartão de Crédito</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="cartao-debito-tab" data-toggle="tab" href="#cartao-debito" role="tab" aria-controls="cartao-debito"
+					 aria-selected="false">Cartão de Débito</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="dinheiro-tab" data-toggle="tab" href="#dinheiro" role="tab" aria-controls="dinheiro" aria-selected="false">Dinheiro</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="deposito-tab" data-toggle="tab" href="#deposito" role="tab" aria-controls="deposito" aria-selected="false">Depósito</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="misto-tab" data-toggle="tab" href="#misto" role="tab" aria-controls="misto" aria-selected="false">Misto</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="boleto-vista" role="tabpanel" aria-labelledby="boleto-vista-tab">
+					<h1>Boleto a Vista</h1>
+				</div>
+				<div class="tab-pane fade" id="cartao-credito" role="tabpanel" aria-labelledby="cartao-credito-tab">
+					<h1>Cartão de Crédito</h1>
+				</div>
+				<div class="tab-pane fade" id="cartao-debito" role="tabpanel" aria-labelledby="cartao-debito-tab">
+					<h1>Cartão de Débito</h1>
+				</div>
+				<div class="tab-pane fade" id="dinheiro" role="tabpanel" aria-labelledby="dinheiro-tab">
+					<h1>Dinheiro</h1>
+				</div>
+
+				<div class="tab-pane fade" id="deposito" role="tabpanel" aria-labelledby="deposito-tab">
+					<h1>Depósito</h1>
+				</div>
+
+				<div class="tab-pane fade" id="misto" role="tabpanel" aria-labelledby="misto-tab">
+
+					<div class="row">
+
+						<div class="form-check col-md-3">
+							<input type="checkbox" class="form-check-input" id="chkMistoBoleto">
+							<label class="form-check-label" for="chkMistoBoleto">Boleto à Vista</label>
+						</div>
+
+						<div class="form-check col-md-3">
+							<input type="checkbox" class="form-check-input" id="chkMistoCredito">
+							<label class="form-check-label" for="chkMistoCredito">Cartão de Crédito</label>
+						</div>
+
+						<div class="form-check col-md-3">
+							<input type="checkbox" class="form-check-input" id="chkMistoDebito">
+							<label class="form-check-label" for="chkMistoDebito">Cartão de Débito</label>
+						</div>
+
+						<div class="form-check col-md-3">
+							<input type="checkbox" class="form-check-input" id="chkMistoDinheiro">
+							<label class="form-check-label" for="chkMistoDinheiro">Dinheiro</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
 
 		</br>
 
@@ -257,13 +260,13 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		 crossorigin="anonymous"></script>
 
-		<script src="constants.js"></script>
-		<script src="trata.tela.js"></script>
-		<script src="checkout.RadioTipoComprador.js"></script>
-		<script src="checkout.CheckEstrangeiro.js"></script>
-		<script src="checkout.FormDadosComprador.js"></script>
-		<script src="checkout.TabFormaPagamento.js"></script>
-		<script src="checkout.js"></script>
+		<script src="js/constants.js"></script>
+		<script src="js/trata.tela.js"></script>
+		<script src="js/checkout.RadioTipoComprador.js"></script>
+		<script src="js/checkout.CheckEstrangeiro.js"></script>
+		<script src="js/checkout.FormDadosComprador.js"></script>
+		<script src="js/checkout.TabFormaPagamento.js"></script>
+		<script src="js/checkout.js"></script>
 
 </body>
 

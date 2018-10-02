@@ -7,10 +7,10 @@ Checkout.TabFormaPagamento = (function () {
         this.emitter = $({});
         this.on = this.emitter.on.bind(this.emitter);
         this.selectedTab = BOLETO_VISTA;
-        this.chkMistoBoleto = $('#chkMistoBoleto');
-        this.chkMistoCredito = $('#chkMistoCredito');
-        this.chkMistoDebito = $('#chkMistoDebito');
-        this.chkMistoDinheiro = $('#chkMistoDinheiro');
+        this.chkMistoBoleto = this.tabFormFormaPagamento.find('#chkMistoBoleto');
+        this.chkMistoCredito = this.tabFormFormaPagamento.find('#chkMistoCredito');
+        this.chkMistoDebito = this.tabFormFormaPagamento.find('#chkMistoDebito');
+        this.chkMistoDinheiro = this.tabFormFormaPagamento.find('#chkMistoDinheiro');
     }
 
     TabFormaPagamento.prototype.init = function () {
