@@ -1,15 +1,21 @@
-$(function () {
+import { RadioTipoComprador } from "./RadioTipoComprador.mjs";
+import { CheckEstrangeiro } from "./CheckEstrangeiro";
+import { TabFormaPagamento } from "./TabFormaPagamento.mjs";
+import { FormDadosComprador } from "./FormDadosComprador.mjs";
 
-    var radioTipoComprador = new Checkout.RadioTipoComprador();
-    radioTipoComprador.init();
+export class Checkout {
+    constructor() {
 
-    var chkEstrangeiro = new Checkout.CheckEstrangeiro();
-    chkEstrangeiro.init();
+        let radioTipoComprador = new RadioTipoComprador();
+        radioTipoComprador.init();
 
-    var tabPagamento = new Checkout.TabFormaPagamento();
-    tabPagamento.init();
+        let chkEstrangeiro = new CheckEstrangeiro();
+        chkEstrangeiro.init();
 
-    var formCheckout = new Checkout.FormDadosComprador(radioTipoComprador, chkEstrangeiro, tabPagamento);
-    formCheckout.init();
+        let tabPagamento = new TabFormaPagamento();
+        tabPagamento.init();
 
-});
+        let formCheckout = new FormDadosComprador(radioTipoComprador, chkEstrangeiro, tabPagamento);
+        formCheckout.init();
+    }
+}

@@ -1,19 +1,18 @@
-var Checkout = Checkout || {};
+import { TrataTela } from "./TrataTela.js";
+export class FormDadosComprador {
 
-Checkout.FormDadosComprador = (function () {
-
-    function FormDadosComprador(radioTipoComprador, chkEstrangeiro, tabFormaPagamento) {
+    constructor(radioTipoComprador, chkEstrangeiro, tabFormaPagamento) {
         this.formDadosComprador = $('#formDadosComprador');
         this.radioTipoComprador = radioTipoComprador;
         this.chkEstrangeiro = chkEstrangeiro;
         this.tabFormaPagamento = tabFormaPagamento;
     }
 
-    FormDadosComprador.prototype.init = function () {
-        this.radioTipoComprador.on('change', onChangeFisicaJuridica.bind(this));
-        this.chkEstrangeiro.on('change', onChangeEstrangeiro.bind(this));
-        this.tabFormaPagamento.on('change', onChangeFormaPagamento.bind(this));
-        this.tabFormaPagamento.on('mistoChanged', onChangePagamentoMisto.bind(this));
+    init() {
+        this.radioTipoComprador.on('change', this._onChangeFisicaJuridica.bind(this));
+        this.chkEstrangeiro.on('change', this._onChangeEstrangeiro.bind(this));
+        this.tabFormaPagamento.on('change', this._onChangeFormaPagamento.bind(this));
+        this.tabFormaPagamento.on('mistoChanged', this._onChangePagamentoMisto.bind(this));
 
         this.lblCpf = this.formDadosComprador.find("label[for='txtCpf']");
         this.txtCpf = this.formDadosComprador.find('#txtCpf');
@@ -40,11 +39,74 @@ Checkout.FormDadosComprador = (function () {
         this.txtMunicipio = this.formDadosComprador.find('#txtMunicipio');
         this.radioTipoComprador.setSelected(FISICA);
 
-        this.setCamposObrigatorios();
-
+        this._setCamposObrigatorios();
     }
 
-    FormDadosComprador.prototype.setCamposObrigatorios = function () {
+    _onChangeFisicaJuridica(event, value) {
+
+        if (value == FISICA) {
+
+            TrataTela.hide(this.txtCnpj);
+            TrataTela.hide(this.txtRazaoSocial);
+            TrataTela.hide(this.txtNomeFantasia);
+            TrataTela.hide(this.chkIsento);
+            TrataTela.hide(this.txtInscricaoEstadual);
+            TrataTela.hide(this.txtResponsavelNome);
+            TrataTela.hide(this.txtResponsavelCpf);
+
+            TrataTela.show(this.txtCpf);
+            TrataTela.show(this.txtNome);
+            TrataTela.show(this.txtRg);
+            TrataTela.show(this.txtTelefoneResidencial);
+            TrataTela.show(this.dtfDataNascimento);
+            TrataTela.show(this.comboSexo);
+            this.chkEstrangeiro.show();
+
+        } else {//JURIDICA
+
+            TrataTela.show(this.txtCnpj);
+            TrataTela.show(this.txtRazaoSocial);
+            TrataTela.show(this.txtNomeFantasia);
+            TrataTela.show(this.chkIsento);
+            TrataTela.show(this.txtInscricaoEstadual);
+            TrataTela.show(this.txtResponsavelNome);
+            TrataTela.show(this.txtResponsavelCpf);
+
+            TrataTela.hide(this.txtCpf);
+            TrataTela.hide(this.txtNome);
+            TrataTela.hide(this.txtRg);
+            TrataTela.hide(this.txtTelefoneResidencial);
+            TrataTela.hide(this.dtfDataNascimento);
+            TrataTela.hide(this.comboSexo);
+            this.chkEstrangeiro.hide();
+
+        }
+
+        this._setCamposObrigatorios();
+    }
+
+    _onChangeEstrangeiro(event, value) {
+
+        if (value) {
+            this.lblCpf.text('Documento');
+            TrataTela.hide(this.txtRg);
+        } else {
+            this.lblCpf.text('CPF');
+            TrataTela.show(this.txtRg);
+        }
+
+        this._setCamposObrigatorios();
+    }
+
+    _onChangeFormaPagamento() {
+        this._setCamposObrigatorios();
+    }
+
+    _onChangePagamentoMisto() {
+        this._setCamposObrigatorios();
+    }
+
+    _setCamposObrigatorios() {
 
         this.lblCpf.prop('required', false);
         this.txtCpf.prop('required', false);
@@ -134,72 +196,4 @@ Checkout.FormDadosComprador = (function () {
         }
 
     }
-
-    function onChangeFormaPagamento() {
-        this.setCamposObrigatorios();
-    }
-
-    function onChangePagamentoMisto() {
-        this.setCamposObrigatorios();
-    }
-
-
-    function onChangeFisicaJuridica(event, value) {
-
-        if (value == FISICA) {
-
-            TrataTela.hide(this.txtCnpj);
-            TrataTela.hide(this.txtRazaoSocial);
-            TrataTela.hide(this.txtNomeFantasia);
-            TrataTela.hide(this.chkIsento);
-            TrataTela.hide(this.txtInscricaoEstadual);
-            TrataTela.hide(this.txtResponsavelNome);
-            TrataTela.hide(this.txtResponsavelCpf);
-
-            TrataTela.show(this.txtCpf);
-            TrataTela.show(this.txtNome);
-            TrataTela.show(this.txtRg);
-            TrataTela.show(this.txtTelefoneResidencial);
-            TrataTela.show(this.dtfDataNascimento);
-            TrataTela.show(this.comboSexo);
-            this.chkEstrangeiro.show();
-
-        } else {//JURIDICA
-
-            TrataTela.show(this.txtCnpj);
-            TrataTela.show(this.txtRazaoSocial);
-            TrataTela.show(this.txtNomeFantasia);
-            TrataTela.show(this.chkIsento);
-            TrataTela.show(this.txtInscricaoEstadual);
-            TrataTela.show(this.txtResponsavelNome);
-            TrataTela.show(this.txtResponsavelCpf);
-
-            TrataTela.hide(this.txtCpf);
-            TrataTela.hide(this.txtNome);
-            TrataTela.hide(this.txtRg);
-            TrataTela.hide(this.txtTelefoneResidencial);
-            TrataTela.hide(this.dtfDataNascimento);
-            TrataTela.hide(this.comboSexo);
-            this.chkEstrangeiro.hide();
-
-        }
-
-        this.setCamposObrigatorios();
-    }
-
-    function onChangeEstrangeiro(event, value) {
-
-        if (value) {
-            this.lblCpf.text('Documento');
-            TrataTela.hide(this.txtRg);
-        } else {
-            this.lblCpf.text('CPF');
-            TrataTela.show(this.txtRg);
-        }
-
-        this.setCamposObrigatorios();
-    }
-
-    return FormDadosComprador;
-
-}());
+}
