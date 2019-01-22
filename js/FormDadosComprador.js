@@ -1,5 +1,6 @@
 import { TrataTela } from "./TrataTela.js";
 import * as constants from './Constants.js';
+
 export class FormDadosComprador {
 
     constructor(radioTipoComprador, chkEstrangeiro, tabFormaPagamento) {
