@@ -1,9 +1,10 @@
+import * as constants from './Constants.js';
 export class TabFormaPagamento {
     constructor() {
         this.tabFormFormaPagamento = $('#tabFormaPagamento');
         this.emitter = $({});
         this.on = this.emitter.on.bind(this.emitter);
-        this.selectedTab = BOLETO_VISTA;
+        this.selectedTab = constants.BOLETO_VISTA;
         this.chkMistoBoleto = this.tabFormFormaPagamento.find('#chkMistoBoleto');
         this.chkMistoCredito = this.tabFormFormaPagamento.find('#chkMistoCredito');
         this.chkMistoDebito = this.tabFormFormaPagamento.find('#chkMistoDebito');
@@ -39,11 +40,11 @@ export class TabFormaPagamento {
         return this.chkMistoCredito.is(":checked");
     }
 
-    isMistoDebitoSelected = function () {
+    isMistoDebitoSelected() {
         return this.chkMistoDebito.is(":checked");
     }
 
-    isMistoDinheiroSelected = function () {
+    isMistoDinheiroSelected() {
         return this.chkMistoDinheiro.is(":checked");
     }
 }
