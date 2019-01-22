@@ -34,18 +34,18 @@ export class TabFormaPagamento {
     }
 
     isMistoBoletoChecked() {
-        return this.chkMistoBoleto.is(":checked");
+        return this.chkMistoBoleto.is(':checked');
     }
 
     isMistoCreditoSelected() {
-        return this.chkMistoCredito.is(":checked");
+        return this.chkMistoCredito.is(':checked');
     }
 
     isMistoDebitoSelected() {
-        return this.chkMistoDebito.is(":checked");
+        return this.chkMistoDebito.is(':checked');
     }
 
     isMistoDinheiroSelected() {
-        return this.chkMistoDinheiro.is(":checked");
+        return this.chkMistoDinheiro.is(':checked');
     }
 }

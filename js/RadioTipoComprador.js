@@ -10,14 +10,14 @@ export class RadioTipoComprador {
     }
 
     _changeFisicaJuridica() {
-        this.emitter.trigger('change', this.radioTipoComprador.filter(":checked").val());
+        this.emitter.trigger('change', this.radioTipoComprador.filter(':checked').val());
     }
 
     getSelected() {
-        return this.radioTipoComprador.filter(":checked").val();
+        return this.radioTipoComprador.filter(':checked').val();
     }
 
     setSelected(value) {
-        this.radioTipoComprador.filter("[value='" + value + "']").click();
+        this.radioTipoComprador.filter('[value=\'' + value + '\']').click();
     }
 }

@@ -1,7 +1,7 @@
-import { RadioTipoComprador } from "./RadioTipoComprador.js";
-import { CheckEstrangeiro } from "./CheckEstrangeiro.js";
-import { TabFormaPagamento } from "./TabFormaPagamento.js";
-import { FormDadosComprador } from "./FormDadosComprador.js";
+import { RadioTipoComprador } from './RadioTipoComprador.js';
+import { CheckEstrangeiro } from './CheckEstrangeiro.js';
+import { TabFormaPagamento } from './TabFormaPagamento.js';
+import { FormDadosComprador } from './FormDadosComprador.js';
 
 class Checkout {
     constructor() {

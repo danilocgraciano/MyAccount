@@ -1,4 +1,4 @@
-import { TrataTela } from "./TrataTela.js";
+import { TrataTela } from './TrataTela.js';
 import * as constants from './Constants.js';
 
 export class FormDadosComprador {
@@ -16,7 +16,7 @@ export class FormDadosComprador {
         this.tabFormaPagamento.on('change', this._onChangeFormaPagamento.bind(this));
         this.tabFormaPagamento.on('mistoChanged', this._onChangePagamentoMisto.bind(this));
 
-        this.lblCpf = this.formDadosComprador.find("label[for='txtCpf']");
+        this.lblCpf = this.formDadosComprador.find('label[for=\'txtCpf\']');
         this.txtCpf = this.formDadosComprador.find('#txtCpf');
         this.txtCnpj = this.formDadosComprador.find('#txtCnpj');
         this.txtRazaoSocial = this.formDadosComprador.find('#txtRazaoSocial');

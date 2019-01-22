@@ -23,6 +23,6 @@ export class CheckEstrangeiro {
     }
 
     isChecked() {
-        return this.chkEstrangeiro.is(":checked");
+        return this.chkEstrangeiro.is(':checked');
     }
 }
