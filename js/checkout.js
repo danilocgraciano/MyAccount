@@ -3,9 +3,8 @@ import { CheckEstrangeiro } from "./CheckEstrangeiro.js";
 import { TabFormaPagamento } from "./TabFormaPagamento.js";
 import { FormDadosComprador } from "./FormDadosComprador.js";
 
-export class Checkout {
+class Checkout {
     constructor() {
-
         let radioTipoComprador = new RadioTipoComprador();
         radioTipoComprador.init();
 
@@ -19,3 +18,5 @@ export class Checkout {
         formCheckout.init();
     }
 }
+
+export let checkout = new Checkout(); 

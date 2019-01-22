@@ -1,4 +1,5 @@
 import { TrataTela } from "./TrataTela.js";
+import * as constants from './Constants.js';
 export class FormDadosComprador {
 
     constructor(radioTipoComprador, chkEstrangeiro, tabFormaPagamento) {
@@ -37,14 +38,14 @@ export class FormDadosComprador {
         this.txtBairro = this.formDadosComprador.find('#txtBairro');
         this.txtComplemento = this.formDadosComprador.find('#txtComplemento');
         this.txtMunicipio = this.formDadosComprador.find('#txtMunicipio');
-        this.radioTipoComprador.setSelected(FISICA);
+        this.radioTipoComprador.setSelected(constants.FISICA);
 
         this._setCamposObrigatorios();
     }
 
     _onChangeFisicaJuridica(event, value) {
 
-        if (value == FISICA) {
+        if (value == constants.FISICA) {
 
             TrataTela.hide(this.txtCnpj);
             TrataTela.hide(this.txtRazaoSocial);
@@ -134,7 +135,7 @@ export class FormDadosComprador {
         this.txtMunicipio.prop('required', false);
 
 
-        if (this.radioTipoComprador.getSelected() == FISICA) {
+        if (this.radioTipoComprador.getSelected() == constants.FISICA) {
             this.txtCpf.prop('required', true);
             this.txtNome.prop('required', true);
             this.txtRg.prop('required', true);
@@ -166,9 +167,9 @@ export class FormDadosComprador {
             this.txtMunicipio.prop('required', true);
         }
 
-        if (this.tabFormaPagamento.selectedTab == CARTAO_CREDITO
-            || this.tabFormaPagamento.selectedTab == CARTAO_DEBITO
-            || this.tabFormaPagamento.selectedTab == DINHEIRO) {
+        if (this.tabFormaPagamento.selectedTab == constants.CARTAO_CREDITO
+            || this.tabFormaPagamento.selectedTab == constants.CARTAO_DEBITO
+            || this.tabFormaPagamento.selectedTab == constants.DINHEIRO) {
             this.txtRg.prop('required', false);
             this.txtLogradouro.prop('required', false);
             this.txtNumero.prop('required', false);
@@ -176,7 +177,7 @@ export class FormDadosComprador {
             this.txtMunicipio.prop('required', false);
         }
 
-        if (this.tabFormaPagamento.selectedTab == MISTO) {
+        if (this.tabFormaPagamento.selectedTab == constants.MISTO) {
 
 
             this.txtRg.prop('required', false);

@@ -1,9 +1,12 @@
-const BOLETO_VISTA = 'Boleto à Vista';
-const CARTAO_CREDITO = 'Cartão de Crédito';
-const CARTAO_DEBITO = 'Cartão de Débito';
-const DINHEIRO = 'Dinheiro';
-const DEPOSITO = 'Depósito';
-const MISTO = 'Misto';
+export const BOLETO_VISTA = 'Boleto à Vista';
+export const CARTAO_CREDITO = 'Cartão de Crédito';
+export const CARTAO_DEBITO = 'Cartão de Débito';
+export const DINHEIRO = 'Dinheiro';
+export const DEPOSITO = 'Depósito';
+export const MISTO = 'Misto';
+export const FISICA = 'F';
+export const JURIDICA = 'j';
 
-const FISICA = 'F';
-const JURIDICA = 'j';
+
+
+
