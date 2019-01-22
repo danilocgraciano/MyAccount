@@ -1,4 +1,5 @@
 import * as constants from './Constants.js';
+
 export class TabFormaPagamento {
     constructor() {
         this.tabFormFormaPagamento = $('#tabFormaPagamento');
